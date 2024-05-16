@@ -1,15 +1,18 @@
 mod debug;
+mod drag_n_drop;
 mod volumetric;
 
 use bevy::prelude::*;
 use debug::DebugPlugin;
+use drag_n_drop::DragNDropPlugin;
 use volumetric::VolumetricPlugin;
 
 fn main() {
     App::new()
+    .add_plugins(DefaultPlugins)  
     .add_plugins(DebugPlugin)
+    .add_plugins(DragNDropPlugin)
     .add_plugins(VolumetricPlugin)
-    .add_plugins(DefaultPlugins)
     .add_systems(Startup, setup)
     .run();
 }
