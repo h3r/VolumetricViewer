@@ -1,7 +1,7 @@
 
 use bevy::{
     prelude::*, 
-    render::texture::Image
+    render::texture::*,
 };
 use std::{
     error::Error,
@@ -84,9 +84,6 @@ fn extract_dicom(
     //load dicom file
     if let Ok(pixel_data_bytes) = open_dicom_file(path_buf) {
         println!("Pixel Data Bytes: {:?}", pixel_data_bytes);
-
-        let img = new Image();
-
     }
 }
 
